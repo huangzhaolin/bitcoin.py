@@ -20,10 +20,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bitcoin_py.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bitcoin_py.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitcoin_py.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="14" selection-start="98" selection-end="98" vertical-scroll-proportion="0.12732096">
+            <state line="3" column="14" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -31,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="service.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="service.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="119" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+            <state line="3" column="68" selection-start="122" selection-end="122" vertical-scroll-proportion="0.12732096">
               <folding />
             </state>
           </provider>
@@ -72,8 +72,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/service.py" />
         <option value="$PROJECT_DIR$/bitcoin_py.py" />
+        <option value="$PROJECT_DIR$/service.py" />
       </list>
     </option>
   </component>
@@ -355,13 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="119" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascripts/bitcoin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="19" selection-start="75" selection-end="86" vertical-scroll-proportion="0.0">
@@ -371,10 +364,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitcoin_py.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="98" selection-end="98" vertical-scroll-proportion="0.12732096">
+        <state line="3" column="14" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="68" selection-start="122" selection-end="122" vertical-scroll-proportion="0.12732096">
+          <folding />
         </state>
       </provider>
     </entry>

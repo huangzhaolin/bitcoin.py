@@ -1,7 +1,7 @@
 __author__ = 'zhaolin.huang'
 import MySQLdb as mysql
 
-cnn=mysql.connect(host="jolinhuang.com",user="root",passwd="5527193",db="bitcoin")
+cnn=mysql.connect(host="jolinhuang.com",user="root",passwd="********",db="bitcoin")
 cursor=cnn.cursor()
 
 class BitCoinTrade(object):
