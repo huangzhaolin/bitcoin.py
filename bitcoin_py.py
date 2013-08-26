@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/requestData',methods=['POST'])
+@app.route('/requestData.htm',methods=['POST'])
 def requestData():
     parameters=request.form
     return service.trades(parameters.get("startTime",""),parameters.get("endTime",""),parameters.get("orignal",""))
