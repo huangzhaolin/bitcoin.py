@@ -23,7 +23,7 @@
       <file leaf-file-name="bitcoin_py.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bitcoin_py.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="28" selection-start="221" selection-end="221" vertical-scroll-proportion="0.4244032">
+            <state line="10" column="18" selection-start="211" selection-end="211" vertical-scroll-proportion="0.4244032">
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -371,7 +371,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bitcoin_py.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="221" selection-end="221" vertical-scroll-proportion="0.4244032">
+        <state line="10" column="18" selection-start="211" selection-end="211" vertical-scroll-proportion="0.4244032">
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
