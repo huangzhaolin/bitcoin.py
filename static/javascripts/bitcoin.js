@@ -11,18 +11,18 @@ bitcoin.requestData = function () {
         type: "post",
         data: {startTime: new Date().addDays(-1).datetime2SimpleFormat(), endTime: new Date().datetime2SimpleFormat(), orignal: "BITCCHINA"},
         success: function (jsonData) {
-            bitcoin.tradeDatas["btcchina"]=null;
+            bitcoin.tradeDatas["btcchina"] = null;
             bitcoin.tradeDatas["btcchina"] = jsonData;
-            bitcoin.drawPriceChart()
-        }});
-    $.ajax({
-        url: "queryData.htm",
-        type: "post",
-        data: {startTime: new Date().addDays(-1).datetime2SimpleFormat(), endTime: new Date().datetime2SimpleFormat(), orignal: "BITCCHINA"},
-        success: function (jsonData) {
-            bitcoin.tradeDatas["mtgox"]=null;
-            bitcoin.tradeDatas["mtgox"] = jsonData;
-            bitcoin.drawPriceChart()
+
+            $.ajax({
+                url: "queryData.htm",
+                type: "post",
+                data: {startTime: new Date().addDays(-1).datetime2SimpleFormat(), endTime: new Date().datetime2SimpleFormat(), orignal: "BITCCHINA"},
+                success: function (jsonData) {
+                    bitcoin.tradeDatas["mtgox"] = null;
+                    bitcoin.tradeDatas["mtgox"] = jsonData;
+                    bitcoin.drawPriceChart()
+                }});
         }});
 };
 bitcoin.drawPriceChart = function () {
