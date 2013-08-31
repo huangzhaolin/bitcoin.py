@@ -10,9 +10,12 @@ class BitCoinTrade(object):
             self.__dict__[key]=value
 
 def trades(startTime,endTime,orignal):
-    cursor.execute("select id,date_time,price,num,trade_id,trade_num from trade_data where date_time >= '%(startTime)s' \ "
-                   "and date_time <='%(endTime)s' and orignal = '%(orignal)s'"%{"startTime":startTime,"endTime":endTime,"orignal":orignal})
-    return [zip(("id","date_time","price,num","trade_id","trade_num" ),trade) for trade in cursor.fetchall]
+    try:
+        cursor.execute("select id,date_time,price,num,trade_id,trade_num from trade_data where date_time >= '%(startTime)s' \ "
+                       "and date_time <='%(endTime)s' and orignal = '%(orignal)s'"%{"startTime":startTime,"endTime":endTime,"orignal":orignal})
+        return [zip(("id","date_time","price,num","trade_id","trade_num" ),trade) for trade in cursor.fetchall]
+    except Exception,e:
+        print e
 
 
 
