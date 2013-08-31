@@ -62,6 +62,6 @@ bitcoin.drawPriceChart = function () {
     }
 }
 $(document).ready(function () {
-    setInterval(bitcoin.requestData, 3000);
+    setInterval(bitcoin.requestData, 10000);
     setInterval(bitcoin.drawPriceChart, 5000);
 });
