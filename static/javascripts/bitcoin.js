@@ -46,25 +46,24 @@ bitcoin.drawPriceChart = function () {
             },
             plotOptions: {
                 spline: {
-                    lineWidth: 4,
+                    lineWidth: 2,
                     states: {
                         hover: {
-                            lineWidth: 5
+                            lineWidth: 3
                         }
                     },
                     marker: {
                         enabled: false
                     }
-                },
-                pointInterval: 60000
+                }
             },
             title: {
                 text: 'BTCCHINA AND MTGOX'
             }, xAxis: {
                 type: 'datetime',
                 dateTimeLabelFormats: { // don't display the dummy year
-                    hour: '%e. %b',
-                    minute: '%b'
+                    minute: "%A, %b %e, %H:%M",
+                    hour: "%A, %b %e, %H:%M"
                 }
             },
             series: [
