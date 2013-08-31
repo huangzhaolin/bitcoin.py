@@ -31,7 +31,7 @@ def trades(startTime,endTime,orignal):
     try:
         doSql("select id,date_time,price,num,trade_id,trade_num from trade_data where date_time >= '%(startTime)s' "\
                        "and date_time <='%(endTime)s' and orignal = '%(orignal)s'"%{"startTime":startTime,"endTime":endTime,"orignal":orignal})
-        return [zip(("id","date_time","price,num","trade_id","trade_num" ),trade) for trade in cursor.fetchall]
+        return [zip(("id","date_time","price,num","trade_id","trade_num" ),trade) for trade in cursor.fetchall()]
     except Exception:
         log.debug(traceback.format_exc())
 

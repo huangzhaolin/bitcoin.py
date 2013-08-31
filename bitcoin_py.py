@@ -12,8 +12,6 @@ def index():
 @app.route('/queryData.htm',methods=['POST'])
 def requestData():
     parameters=request.form
-    print parameters
-    print request.args
     return json.dumps(service.trades(parameters.get("startTime",""),parameters.get("endTime",""),parameters.get("orignal","")),indent=6)
 if __name__ == '__main__':
     app.run()
