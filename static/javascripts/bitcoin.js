@@ -13,6 +13,7 @@ bitcoin.requestData = function () {
         success: function (jsonData) {
             bitcoin.tradeDatas["btcchina"]=null;
             bitcoin.tradeDatas["btcchina"] = jsonData;
+            bitcoin.drawPriceChart()
         }});
     $.ajax({
         url: "queryData.htm",
@@ -21,6 +22,7 @@ bitcoin.requestData = function () {
         success: function (jsonData) {
             bitcoin.tradeDatas["mtgox"]=null;
             bitcoin.tradeDatas["mtgox"] = jsonData;
+            bitcoin.drawPriceChart()
         }});
 };
 bitcoin.drawPriceChart = function () {
@@ -63,5 +65,4 @@ bitcoin.drawPriceChart = function () {
 }
 $(document).ready(function () {
     setInterval(bitcoin.requestData, 10000);
-    setInterval(bitcoin.drawPriceChart, 5000);
 });
