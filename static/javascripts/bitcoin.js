@@ -11,6 +11,7 @@ bitcoin.requestData = function () {
         type: "post",
         data: {startTime: new Date().addDays(-1).datetime2SimpleFormat(), endTime: new Date().datetime2SimpleFormat(), orignal: "BITCCHINA"},
         success: function (jsonData) {
+            bitcoin.tradeDatas["btcchina"]=null;
             bitcoin.tradeDatas["btcchina"] = jsonData;
         }});
     $.ajax({
@@ -18,6 +19,7 @@ bitcoin.requestData = function () {
         type: "post",
         data: {startTime: new Date().addDays(-1).datetime2SimpleFormat(), endTime: new Date().datetime2SimpleFormat(), orignal: "BITCCHINA"},
         success: function (jsonData) {
+            bitcoin.tradeDatas["mtgox"]=null;
             bitcoin.tradeDatas["mtgox"] = jsonData;
         }});
 };
@@ -25,7 +27,7 @@ bitcoin.drawPriceChart = function () {
     function chartData(datas) {
         var chartDatas = []
         for (var tradeDataIndex in datas) {
-            tradeData = datas[tradeDataIndex]
+            tradeData = datas[tradeDataIndex];
             chartDatas.push([tradeData.date_time, tradeData.price])
         }
         return chartDatas;
