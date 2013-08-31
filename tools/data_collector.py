@@ -66,7 +66,7 @@ class DataCollectorFactory(object):
           max_trade_id=max_trade_id if max_trade_id else 0
           for data in json_data:
                tradeData=TradeData(zip(["datetime","price","num","orignal","trade_num","trade_id"],[time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(data.get("date","")))),data.get("price",""),data.get("amount",0),orignal,0,data.get("tid","")]))
-               if int(max_trade_id) < int(tradeData.trade_id) or tradeData.trade_id==0:
+               if tradeData.trade_id==0 or int(max_trade_id) < int(tradeData.trade_id):
                     tradeData.insert_to_db(self.cnn)
      def buy_data_handle(self,json_data):
           for data in json_data:
