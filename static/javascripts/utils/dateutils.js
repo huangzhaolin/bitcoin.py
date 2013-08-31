@@ -2,27 +2,27 @@
  * @authoer:zhaolinhuang create:2012-12-5
  */
 Date.prototype.format = function(formatString) {
-	var that=this;
+  var that=this;
 	var formatMapper = {
 		"%Y": this.getFullYear(),
 		"%m": this.getMonth() + 1,
 		"%d": this.getDate(),
 		"%H": this.getHours(),
 		"%M": this.getMinutes(),
-		// Ó¢ÎÄµÄÔÂ·İ
+		// è‹±æ–‡çš„æœˆä»½
 		"%Em": this.toString().split(" ")[1],
 		"%s": this.getSeconds(),
 		"%S": this.getMilliseconds(),
 		"%w": this.getDay(),
 		"%U": (function(day) {
 			return {
-				0: "ÖÜÈÕ",
-				1: "ÖÜÒ»",
-				2: "ÖÜ¶ş",
-				3: "ÖÜÈı",
-				4: "ÖÜËÄ",
-				5: "ÖÜÎå",
-				6: "ÖÜÁù"
+				0: "å‘¨æ—¥",
+				1: "å‘¨ä¸€",
+				2: "å‘¨äºŒ",
+				3: "å‘¨ä¸‰",
+				4: "å‘¨å››",
+				5: "å‘¨äº”",
+				6: "å‘¨å…­"
 			}[day];
 		})(this.getDay()),
 		"%u": function() {
@@ -43,7 +43,7 @@ Date.prototype.format = function(formatString) {
 	return formatString;
 };
 /**
- * sleepÃë¼¶
+ * sleepç§’çº§
  */
 Date.prototype.sleep = function(millSecond) {
 	var nowTime = new Date().getTime();
@@ -54,19 +54,13 @@ Date.prototype.sleep = function(millSecond) {
 	return;
 };
 /**
- * Èç:2012Äê12ÔÂ18ÈÕ 00:00
+ * å¦‚:2012å¹´12æœˆ18æ—¥ 00:00
  */
 Date.prototype.datetime2FullCN = function() {
-	return this.format("%YÄê%mÔÂ%dÈÕ %H:%M");
+	return this.format("%Yå¹´%mæœˆ%dæ—¥ %H:%M");
 };
 /**
- * Èç:2012-12-18 00:00
- */
-Date.prototype.datetime2FullMin = function() {
-	return this.format("%Y-%m-%d %H:%M");
-};
-/**
- * Èç2012-12-18 00:00:00
+ * å¦‚2012-12-18 00:00:00
  *
  * @returns
  */
@@ -74,7 +68,7 @@ Date.prototype.datetime2SimpleFormat = function() {
 	return this.format("%Y-%m-%d %H:%M:%s");
 };
 /**
- * Ê±Çø £¬¶«£º+£¬Î÷£º-
+ * æ—¶åŒº ï¼Œä¸œï¼š+ï¼Œè¥¿ï¼š-
  */
 Date.prototype.changeTimezone = function(timeZone) {
 	var times = this.getTime();
@@ -84,7 +78,7 @@ Date.prototype.changeTimezone = function(timeZone) {
 	return this;
 };
 /**
- * Ãë¼¶
+ * ç§’çº§
  *
  * @param second
  */
@@ -94,7 +88,7 @@ Date.prototype.changeTime = function(second) {
 	return this;
 };
 /**
- * ¼ÓÌìÊı£¬¿ÉÒÔÎª¸ºÊı
+ * åŠ å¤©æ•°ï¼Œå¯ä»¥ä¸ºè´Ÿæ•°
  *
  * @param dayNum
  */
@@ -104,10 +98,10 @@ Date.prototype.addDays = function(dayNum) {
 	return this;
 };
 /**
- * ºÁÃë¼¶Ê±¼ä¶Ô±È
- * -1 Ğ¡ÓÚ
- * 0 µÈÓÚ
- * 1 ´óÓÚ
+ * æ¯«ç§’çº§æ—¶é—´å¯¹æ¯”
+ * -1 å°äº
+ * 0 ç­‰äº
+ * 1 å¤§äº
  */
 Date.prototype.compareTime = function(compareDate) {
 	if (compareDate instanceof Date) {
@@ -120,13 +114,13 @@ Date.prototype.compareTime = function(compareDate) {
 		}
 	} else {
 		throw {
-			name: "´«Èë²ÎÊıÒì³£",
-			message: compareDate + "²»ÊÇÕıÈ·µÄDate¶ÔÏó"
+			name: "ä¼ å…¥å‚æ•°å¼‚å¸¸",
+			message: compareDate + "ä¸æ˜¯æ­£ç¡®çš„Dateå¯¹è±¡"
 		};
 	}
 };
 /**
- * Ö»±È½ÏÈÕÆÚ
+ * åªæ¯”è¾ƒæ—¥æœŸ
  *
  * @param compareDate
  */
@@ -137,8 +131,8 @@ Date.prototype.compareDay = function(compareDate) {
 		return thisDate.compareTime(compareDate);
 	} else {
 		throw {
-			name: "´«Èë²ÎÊıÒì³£",
-			message: compareDate + "²»ÊÇÕıÈ·µÄDate¶ÔÏó"
+			name: "ä¼ å…¥å‚æ•°å¼‚å¸¸",
+			message: compareDate + "ä¸æ˜¯æ­£ç¡®çš„Dateå¯¹è±¡"
 		}
 	};
 };

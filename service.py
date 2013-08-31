@@ -28,10 +28,10 @@ class BitCoinTrade(object):
             self.__dict__[key]=value
 
 def trades(startTime,endTime,orignal):
-    try:
+    try:#trade[1].strftime("%Y-%m-%d %H:%M:%S")
         doSql("select id,date_time,price,num,trade_id,trade_num from trade_data where date_time >= '%(startTime)s' "\
                        "and date_time <='%(endTime)s' and orignal = '%(orignal)s'"%{"startTime":startTime,"endTime":endTime,"orignal":orignal})
-        return [dict(zip(("id","date_time","price,num","trade_id","trade_num" ),(trade[0],trade[1].strftime("%Y-%m-%d %H:%M:%S"),trade[2],trade[3],trade[4]))) for trade in cursor.fetchall()]
+        return [dict(zip(("id","date_time","price","num","trade_id","trade_num" ),(trade[0],trade[1].strftime("%s"),trade[2],trade[3],trade[4],trade[5]))) for trade in cursor.fetchall()]
     except Exception:
         log.debug(traceback.format_exc())
 
