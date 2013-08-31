@@ -35,6 +35,7 @@ bitcoin.drawPriceChart = function () {
         $("#trade_chart").append("<div style='float:left;width:45%' id='chart01'></div>");
     }
     if ("btcchina" in bitcoin.tradeDatas && bitcoin.tradeDatas.btcchina && "mtgox" in bitcoin.tradeDatas && bitcoin.tradeDatas.mtgox) {
+        console.log("draw price chart")
         $("#chart01").highcharts({
             chart: {
                 type: 'spline'
