@@ -25,6 +25,7 @@ class TradeData(object):
           for key in dict(parameters).keys():
                self.__dict__[key]=dict(parameters).get(key)
      def insert_to_db(self,cnn):
+          print "insert into trade_data(date_time,price,num,orignal,trade_num,trade_id) values('%s',%s,%s,'%s',%s,%s)"%(self.datetime,self.price,self.num,self.orignal,self.trade_num,self.trade_id)
           cnn.cursor().execute("insert into trade_data(date_time,price,num,orignal,trade_num,trade_id) values('%s',%s,%s,'%s',%s,%s)"%(self.datetime,self.price,self.num,self.orignal,self.trade_num,self.trade_id))
           cnn.commit()
 class BaseData(object):
