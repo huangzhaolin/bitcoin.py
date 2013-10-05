@@ -9,7 +9,7 @@ class Alarm(object):
     def __init__(self,orignal):
         self.orignal=orignal
     def searchData(self):
-        searchdata=self.cursor.execute("select date_time,price,num where orignal='%s' and date_time>'%s'"%(self.orignal,time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()-15))))
+        searchdata=self.cursor.execute("select date_time,price,num from trade_data where orignal='%s' and date_time>'%s'"%(self.orignal,time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()-15))))
         return [ zip("date_time,price,num",row) for row in searchdata ]
     def sendAlarm(self,**message):
         cmd="echo %(message)s | mail -s %(subject)s 228939139@163.com"
