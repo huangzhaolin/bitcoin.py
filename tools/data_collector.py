@@ -47,7 +47,7 @@ class SellData(BaseData):
      def __init__(self, parameters):
           super(SellData, self).__init__(parameters)
      def insert_to_db(self,cnn):
-          print("insert into sell_data(date_time,price,num) values('%s',%s,%s)"%(self.datetime,self.price,self.num))
+          #print("insert into sell_data(date_time,price,num) values('%s',%s,%s)"%(self.datetime,self.price,self.num))
           cnn.cursor().execute("insert into sell_data(date_time,price,num) values('%s',%s,%s)"%(self.datetime,self.price,self.num))
           cnn.commit()
 class DataCollectorFactory(object):
