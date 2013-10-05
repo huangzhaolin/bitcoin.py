@@ -18,13 +18,13 @@ class Alarm(object):
         alarmData=self.searchData()
         alarmMessage=[]
         if len(alarmData)>10:
-            alarmData.append("trade count this 15 seconds > 10 it's:%s"%len(alarmData))
+            alarmMessage.append("trade count this 15 seconds > 10 it's:%s"%len(alarmData))
         moreThan10=[]
         for data in alarmData:
             if data.get("num")>10:
                 moreThan10.append("price is :%(price)s num is:%(num)s"%data)
         if len(moreThan10) > 0:
-            alarmData.append("num > 10 \n :%s"%"\n".join(moreThan10))
+            alarmMessage.append("num > 10 \n :%s"%"\n".join(moreThan10))
         lowest=0
         hightest=0
         for data in alarmData:
@@ -37,8 +37,8 @@ class Alarm(object):
             if data.get("price") > hightest:
                 hightest=data.get("price")
         if hightest-lowest > 1.5:
-            alarmData.append("high - low is >1.5 high is :%s and low is : %s"%(hightest,lowest))
-        self.sendAlarm(**{"subject":"bitcoin trade alarm","message":"\n".join(alarmData)})
+            alarmMessage.append("high - low is >1.5 high is :%s and low is : %s"%(hightest,lowest))
+        self.sendAlarm(**{"subject":"bitcoin trade alarm","message":"\n".join(alarmMessage)})
 
 if __name__=="__main__":
     import threading
