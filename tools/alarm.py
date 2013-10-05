@@ -38,7 +38,7 @@ class Alarm(object):
                 hightest=data.get("price")
         if hightest-lowest > 1.5:
             alarmData.append("high - low is >1.5 high is :%s and low is : %s"%(hightest,lowest))
-        self.sendAlarm({"subject":"bitcoin trade alarm","message":"\n".join(alarmData)})
+        self.sendAlarm(**{"subject":"bitcoin trade alarm","message":"\n".join(alarmData)})
 
 if __name__=="__main__":
     import threading
