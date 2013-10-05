@@ -13,7 +13,7 @@ class Alarm(object):
         self.cursor.execute("select date_time,price,num from trade_data where orignal='%s' and date_time>'%s'"%(self.orignal,time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()-15))))
         return [ dict(zip(("date_time","price","num"),row)) for row in self.cursor.fetchall() ]
     def sendAlarm(self,**message):
-        cmd="echo %(message)s | mail -s %(subject)s 228939139@163.com"
+        cmd="echo \"%(message)s\" | mail -s %(subject)s 228939139@163.com"
         os.system(cmd%message)
     def hanlde(self):
         alarmData=self.searchData()
