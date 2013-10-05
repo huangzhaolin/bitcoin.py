@@ -79,6 +79,7 @@ class DataCollectorFactory(object):
                sellData=SellData(zip(["datetime","price","num"],[time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time())),data[0],data[1]]))
                sellData.insert_to_db(self.cnn)
      def collect_data(self,orignal="BITCCHINA"):
+          print orignal
           json_data=json.loads(list(urllib.urlopen(self.data_url))[0])
           if self.data_type == TradeData:
                self.trade_data_handle(json_data,orignal)
