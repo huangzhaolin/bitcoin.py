@@ -21,22 +21,21 @@ class Alarm(object):
             alarmData.append("trade count this 15 seconds > 10 it's:%s"%len(alarmData))
         moreThan10=[]
         for data in alarmData:
-            if dict(data).get("num")>10:
-                moreThan10.append("price is :%(price)s num is:%(num)s"%dict(data))
+            if data.get("num")>10:
+                moreThan10.append("price is :%(price)s num is:%(num)s"%data)
         if len(moreThan10) > 0:
             alarmData.append("num > 10 \n :%s"%"\n".join(moreThan10))
         lowest=0
         hightest=0
         for data in alarmData:
-            rowData=dict(data)
             if lowest==0 and hightest==0:
-                lowest=rowData.get("price")
-                hightest=rowData.get("price")
+                lowest=data.get("price")
+                hightest=data.get("price")
                 continue
-            if rowData.get("price") < lowest:
-                lowest=rowData.get("price")
-            if rowData.get("price") > hightest:
-                hightest=rowData.get("price")
+            if data.get("price") < lowest:
+                lowest=data.get("price")
+            if data.get("price") > hightest:
+                hightest=data.get("price")
         if hightest-lowest > 1.5:
             alarmData.append("high - low is >1.5 high is :%s and low is : %s"%(hightest,lowest))
         self.sendAlarm({"subject":"bitcoin trade alarm","message":"\n".join(alarmData)})
