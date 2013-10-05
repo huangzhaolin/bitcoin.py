@@ -1,3 +1,4 @@
+#! /bin/env python2.7
 __author__ = 'zhaolinhuang'
 import  MySQLdb
 import smtplib
@@ -38,6 +39,7 @@ class Alarm(object):
                 hightest=data.get("price")
         if hightest-lowest > 1.5:
             alarmMessage.append("high - low is >1.5 high is :%s and low is : %s"%(hightest,lowest))
+        print "\n".join(alarmMessage)
         self.sendAlarm(**{"subject":"bitcoin trade alarm","message":"\n".join(alarmMessage)})
 
 if __name__=="__main__":
