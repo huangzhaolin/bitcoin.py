@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/env python2.7
 #coding=utf-8
 '''
 Created on 2013-7-19
