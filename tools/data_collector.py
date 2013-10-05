@@ -62,7 +62,7 @@ class DataCollectorFactory(object):
           self.cnn=cnn
      def trade_data_handle(self,json_data,orignal="BITCCHINA"):
           cursor=self.cnn.cursor()
-          cursor.execute("select max(trade_id) from trade_data")
+          cursor.execute("select max(trade_id) from trade_data where orignal='%S'"%orignal)
           max_trade_id=cursor.fetchone()[0]
           max_trade_id=max_trade_id if max_trade_id else 0
           for data in json_data:
