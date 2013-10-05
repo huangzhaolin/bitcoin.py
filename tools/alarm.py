@@ -18,8 +18,8 @@ class Alarm(object):
     def hanlde(self):
         alarmData=self.searchData()
         alarmMessage=[]
-        if len(alarmData)>10:
-            alarmMessage.append("trade count this 15 seconds > 10 it's:%s"%len(alarmData))
+        if len(alarmData)>5:
+            alarmMessage.append("trade count this 15 seconds > 5 it's:%s"%len(alarmData))
         moreThan10=[]
         for data in alarmData:
             if data.get("num")>10:
