@@ -90,7 +90,7 @@ class DataCollectorFactory(object):
 if __name__ == "__main__":
     while True:
         threading.Thread(target=DataCollectorFactory(URL["trade"],TradeData,cnnPool[0]).collect_data()).start()
-        #threading.Thread(target=DataCollectorFactory(URL["mtGox"],TradeData,cnnPool[0]).collect_data("MTGOX")).start()
+        threading.Thread(target=DataCollectorFactory(URL["mtGox"],TradeData,cnnPool[0]).collect_data("MTGOX")).start()
         threading.Thread(target=DataCollectorFactory(URL["buyAndSell"],SellData,cnnPool[2]).collect_data()).start()
         threading.Thread(target=DataCollectorFactory(URL["buyAndSell"],BuyData,cnnPool[1]).collect_data()).start()
         time.sleep(20)
