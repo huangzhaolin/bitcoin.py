@@ -5,7 +5,7 @@ from logging.handlers import TimedRotatingFileHandler
 import os
 import traceback
 
-cnn=mysql.connect(host="localhost",user="root",passwd="5527193",db="bitcoin")
+cnn=mysql.connect(host="localhost",user="root",passwd="",db="bitcoin")
 cursor=cnn.cursor()
 
 def doSql(sql):
